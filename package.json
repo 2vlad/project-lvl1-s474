@@ -1,17 +1,21 @@
 {
   "name": "hp1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "",
   "author": "vlad",
   "license": "ISC",
   "description": "Brain-games",
   "keywords": [
-    "game", "cli", "project", "education", "brain-games"
+    "game",
+    "cli",
+    "project",
+    "education",
+    "brain-games"
   ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
-   },
-   "files": [
+  },
+  "files": [
     "dist"
   ],
   "scripts": {
@@ -23,5 +27,8 @@
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }

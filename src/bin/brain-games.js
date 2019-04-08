@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-import readlineSync from 'readline-sync';
+import askName from '../index.js';
 
-const name = readlineSync.question('May I have your name? ');
-console.log('Hello, ' + name + '!');
+askName();
