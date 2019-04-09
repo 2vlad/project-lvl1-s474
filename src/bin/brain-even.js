@@ -1,0 +1,3 @@
+import brainEven from '..';
+
+brainEven();
