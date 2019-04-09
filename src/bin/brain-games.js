@@ -1,3 +1,3 @@
-import askName from '../index.js';
+import askName from '..';
 
 askName();
