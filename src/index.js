@@ -46,9 +46,7 @@ const brainEven = () => {
 
     if (!wheatherAnswerIsCorrect(numberToGuess, usersAnswer)) {
       break;
-    }
-
-    if (wheatherAnswerIsCorrect(numberToGuess, usersAnswer) && i === 3) {
+    } else if (wheatherAnswerIsCorrect(numberToGuess, usersAnswer) && i === 3) {
       console.log(`Congratulations, ${name}!`);
     }
   }
