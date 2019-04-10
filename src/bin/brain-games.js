@@ -1,3 +1,3 @@
-import askName from '..';
+import brainGames from '..';
 
-askName();
+brainGames();

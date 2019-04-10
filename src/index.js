@@ -7,7 +7,8 @@ const greeting = () => {
   return name;
 };
 
-const askName = () => {
+const brainGames = () => {
+  console.log('Welcome to the Brain Games!');
   greeting();
 };
 
@@ -36,7 +37,6 @@ const takeNumber = (typeOfGame) => {
 
     const minMarkValue = 1;
     const maxMarkValue = 3;
-    correctAnswer = 0;
     const markValue = Math.floor(Math.random() * (maxMarkValue - minMarkValue)) + minMarkValue;
     let mark = '';
 
@@ -90,6 +90,7 @@ const playThreeRounds = (typeOfGame, name) => {
 };
 
 const brainCalc = () => {
+  console.log('Welcome to the Brain Games!');
   console.log('What is the result of the expression?');
   const name = greeting();
 
@@ -117,4 +118,4 @@ const brainEven = () => {
   }
 };
 
-export { askName, brainEven, brainCalc };
+export { brainGames, brainEven, brainCalc };
