@@ -1,6 +1,6 @@
 {
   "name": "hp1",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "babel.config.js",
   "author": "vlad",
   "license": "ISC",
@@ -14,7 +14,8 @@
   ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"

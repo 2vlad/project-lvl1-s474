@@ -1,0 +1,3 @@
+import brainCalc from '..';
+
+brainCalc();
