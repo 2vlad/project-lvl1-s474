@@ -1,6 +1,6 @@
 {
   "name": "hp1",
-  "version": "1.0.7",
+  "version": "1.0.12",
   "main": "babel.config.js",
   "author": "vlad",
   "license": "ISC",
@@ -15,7 +15,7 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js"
+    "brain-calc-vlad": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
@@ -29,6 +29,7 @@
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",

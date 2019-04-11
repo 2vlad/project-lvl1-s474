@@ -1,3 +1,3 @@
-import brainCalc from '..';
+import { brainCalc } from '..';
 
 brainCalc();

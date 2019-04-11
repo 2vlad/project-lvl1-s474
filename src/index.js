@@ -2,12 +2,12 @@
 import readlineSync from 'readline-sync';
 
 const greeting = () => {
-  const name = readlineSync.question('May I have your name? ');
+  const name = readlineSync.question('May I have your name? :) ');
   console.log(`Hello, ${name}!`);
   return name;
 };
 
-const brainGames = () => {
+export const brainGames = () => {
   console.log('Welcome to the Brain Games!');
   greeting();
 };
@@ -77,7 +77,7 @@ const playThreeRounds = (typeOfGame, name) => {
     }
 
     console.log(`Question: ${question[0]}`);
-    const usersAnswer = readlineSync.question('Your answer: ');
+    const usersAnswer = readlineSync.question('Your answer!!!: ');
 
     wheatherAnswerIsCorrect(question[1], usersAnswer);
 
@@ -89,7 +89,7 @@ const playThreeRounds = (typeOfGame, name) => {
   }
 };
 
-const brainCalc = () => {
+export const brainCalc = () => {
   console.log('Welcome to the Brain Games!');
   console.log('What is the result of the expression?');
   const name = greeting();
@@ -97,7 +97,7 @@ const brainCalc = () => {
   playThreeRounds('brainCalc', name);
 };
 
-const brainEven = () => {
+export const brainEven = () => {
   console.log('Welcome to the Brain Games!');
   console.log('Answer "yes" if number even otherwise answer "no".');
 
@@ -117,5 +117,3 @@ const brainEven = () => {
     }
   }
 };
-
-export { brainGames, brainEven, brainCalc };

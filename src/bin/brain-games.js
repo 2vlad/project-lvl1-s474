@@ -1,3 +1,3 @@
-import brainGames from '..';
+import { brainGames } from '..';
 
 brainGames();

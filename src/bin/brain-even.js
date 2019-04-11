@@ -1,3 +1,3 @@
-import brainEven from '..';
+import { brainEven } from '..';
 
 brainEven();
