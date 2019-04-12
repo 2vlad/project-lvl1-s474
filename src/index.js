@@ -1,18 +1,12 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-const greeting = () => {
+export const greeting = () => {
   const name = readlineSync.question('May I have your name? :) ');
   console.log(`Hello, ${name}!`);
   return name;
 };
 
-export const brainGames = () => {
-  console.log('Welcome to the Brain Games!');
-  greeting();
-};
-
-const isEven = (number) => {
+export const isEven = (number) => {
   let correctAnswer = '';
   if (number % 2 === 0) {
     correctAnswer = 'yes';
@@ -22,7 +16,7 @@ const isEven = (number) => {
   return correctAnswer;
 };
 
-const takeNumber = (typeOfGame) => {
+export const takeNumber = (typeOfGame) => {
   const min = Math.ceil(1);
   const max = Math.floor(10);
 
@@ -57,63 +51,14 @@ const takeNumber = (typeOfGame) => {
   return question;
 };
 
-const wheatherAnswerIsCorrect = (correctAnswer, answer) => {
+export const wheatherAnswerIsCorrect = (correctAnswer, answer) => {
+  let res = true;
   if (answer === correctAnswer) {
+    res = true;
     console.log('Correct!');
   } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
+    res = false;
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
   }
-};
-
-const playThreeRounds = (typeOfGame, name) => {
-  const numberOfRounds = 3;
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    let [question] = [];
-
-    if (typeOfGame === 'brainCalc') {
-      question = takeNumber('brainCalc');
-    } else if (typeOfGame === 'brainEven') {
-      question = takeNumber('brainEven');
-    }
-
-    console.log(`Question: ${question[0]}`);
-    const usersAnswer = readlineSync.question('Your answer!!!: ');
-
-    wheatherAnswerIsCorrect(question[1], usersAnswer);
-
-    if (!wheatherAnswerIsCorrect(question[1], usersAnswer)) {
-      break;
-    } else if (wheatherAnswerIsCorrect(question[1], usersAnswer) && i === numberOfRounds) {
-      console.log(`Congratulations, ${name}!`);
-    }
-  }
-};
-
-export const brainCalc = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('What is the result of the expression?');
-  const name = greeting();
-
-  playThreeRounds('brainCalc', name);
-};
-
-export const brainEven = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
-
-  const name = greeting();
-
-  const numberOfRounds = 3;
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    const question = takeNumber('brainEven');
-    console.log(`Question: ${question}`);
-    const usersAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = isEven(question);
-
-    if (!wheatherAnswerIsCorrect(correctAnswer, usersAnswer)) {
-      break;
-    } else if (wheatherAnswerIsCorrect(correctAnswer, usersAnswer) && i === numberOfRounds) {
-      console.log(`Congratulations, ${name}!`);
-    }
-  }
+  return res;
 };

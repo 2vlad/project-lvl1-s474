@@ -1,3 +1,4 @@
-import { brainGames } from '..';
+#!/usr/bin/env node
+import games from '../games/games';
 
-brainGames();
+games();
