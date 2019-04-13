@@ -1,8 +1,7 @@
 import engine from '..';
+import random from '../utils';
 
 const rules = 'What is the result of the expression?';
-
-const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const prepareData = () => {
   const a = random(0, 10);

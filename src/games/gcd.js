@@ -1,8 +1,7 @@
 import engine from '..';
+import random from '../utils';
 
 const rules = 'Find the greatest common divisor of given numbers.';
-
-const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const prepareData = () => {
   const a = random(1, 10);
