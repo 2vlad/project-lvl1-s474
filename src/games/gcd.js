@@ -1,37 +1,44 @@
 import engine from '..';
 import random from '../utils';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
-const prepareData = () => {
-  const a = random(1, 10);
-  const b = random(1, 10);
-
+const getGCD = (first, second) => {
   let cd = 0;
   let gcd = 0;
 
-  if (a < b) {
-    while (cd <= a) {
+  if (first < second) {
+    while (cd <= first) {
       cd += 1;
-      if ((a % cd === 0) && (b % cd === 0)) {
+      if ((first % cd === 0) && (second % cd === 0)) {
         gcd = cd;
       }
     }
-  } else if (b <= a) {
-    while (cd <= b) {
+  } else if (second <= first) {
+    while (cd <= second) {
       cd += 1;
-      if ((a % cd === 0) && (b % cd === 0)) {
+      if ((first % cd === 0) && (second % cd === 0)) {
         gcd = cd;
       }
     }
   }
 
+  return gcd;
+};
+
+const prepareData = () => {
+  const first = random(1, 10);
+  const second = random(1, 10);
+
+  const gcd = getGCD(first, second);
+  const quest = `${first} ${second}`;
+
   const data = {
-    question: `${a} ${b}`,
+    question: quest,
     answer: gcd,
   };
 
   return data;
 };
 
-export default () => engine(rules, prepareData);
+export default () => engine(description, prepareData);

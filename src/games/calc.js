@@ -1,7 +1,7 @@
 import engine from '..';
 import random from '../utils';
 
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const prepareData = () => {
   const a = random(0, 10);
@@ -29,12 +29,14 @@ const prepareData = () => {
       break;
   }
 
+  const quest = `${a} ${mark} ${b}`;
+
   const data = {
-    question: `${a} ${mark} ${b}`,
+    question: quest,
     answer: correctAnswer,
   };
 
   return data;
 };
 
-export default () => engine(rules, prepareData);
+export default () => engine(description, prepareData);

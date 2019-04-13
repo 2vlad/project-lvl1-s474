@@ -1,7 +1,7 @@
 import engine from '..';
 import random from '../utils';
 
-const rules = 'Answer "yes" if number even otherwise answer "no".';
+const description = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = number => number % 2 === 0;
 
@@ -17,4 +17,4 @@ const prepareData = () => {
   return data;
 };
 
-export default () => engine(rules, prepareData);
+export default () => engine(description, prepareData);
