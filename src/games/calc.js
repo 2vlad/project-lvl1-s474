@@ -1,27 +1,41 @@
-import readlineSync from 'readline-sync';
-import { greeting, wheatherAnswerIsCorrect, takeNumber } from '..';
+import engine from '..';
 
-const calc = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('What is the result of the expression?');
-  const name = greeting();
+const rules = 'What is the result of the expression?';
 
-  const numberOfRounds = 3;
-  for (let i = 0; i < numberOfRounds; i += 1) {
-    let [question] = [];
+const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
-    question = takeNumber('brainCalc');
+const prepareData = () => {
+  const a = random(0, 10);
+  const b = random(0, 10);
 
-    console.log(`Question: ${question[0]}`);
-    const usersAnswer = parseInt(readlineSync.question('Your answer: '), 10);
-    const hasWon = (wheatherAnswerIsCorrect(question[1], usersAnswer));
+  const minMarkValue = 1;
+  const maxMarkValue = 3;
 
-    if (!hasWon) {
+  const markValue = Math.floor(Math.random() * (maxMarkValue - minMarkValue)) + minMarkValue;
+  let mark = '';
+  let correctAnswer = 0;
+
+  switch (markValue) {
+    case 1:
+      mark = '+';
+      correctAnswer = a + b;
       break;
-    } if (hasWon && i === (numberOfRounds - 1)) {
-      console.log(`Congratulations, ${name}!`);
-    }
+    case 2:
+      mark = '-';
+      correctAnswer = a - b;
+      break;
+    default:
+      mark = '*';
+      correctAnswer = a * b;
+      break;
   }
+
+  const data = {
+    question: `${a} ${mark} ${b}`,
+    answer: correctAnswer,
+  };
+
+  return data;
 };
 
-export default calc;
+export default () => engine(rules, prepareData());
