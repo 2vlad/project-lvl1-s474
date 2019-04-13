@@ -27,8 +27,6 @@ const prepareData = () => {
     answer: missingElement,
   };
 
-  console.log(data.answer);
-
   return data;
 };
 
