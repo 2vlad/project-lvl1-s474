@@ -38,4 +38,4 @@ const prepareData = () => {
   return data;
 };
 
-export default () => engine(rules, prepareData());
+export default () => engine(rules, prepareData);

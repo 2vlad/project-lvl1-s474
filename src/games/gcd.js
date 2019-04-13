@@ -1,41 +1,38 @@
-import readlineSync from 'readline-sync';
 import engine from '..';
 
 const rules = 'Find the greatest common divisor of given numbers.';
-const numberOfRounds = 3;
 
-const gcd = () => {
-  console.log('Welcome to the Brain Games!');
-  for (let i = 0; i <= numberOfRounds; i += 1) {
-    const randomNumbers = getTwoRandomNumbers();
+const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
-    const a = randomNumbers[0];
-    const b = randomNumbers[1];
+const prepareData = () => {
+  const a = random(1, 10);
+  const b = random(1, 10);
 
-    let correctAnswer = a > b ? b : a;
+  let cd = 0;
+  let gcd = 0;
 
-    const question = [];
-
-    const condition = (a % correctAnswer === 0) && (b % correctAnswer === 0);
-
-    while (!condition) {
-      correctAnswer += 1;
+  if (a < b) {
+    while (cd <= a) {
+      cd += 1;
+      if ((a % cd === 0) && (b % cd === 0)) {
+        gcd = cd;
+      }
     }
-
-    question[0] = `${a} ${b}`;
-    question[1] = correctAnswer;
-
-    console.log(`Question: ${a} ${b}`);
-    const usersAnswer = parseInt(readlineSync.question('Your answer: '), 10);
-
-    const hasWon = (isAnswerCorrect(correctAnswer, usersAnswer));
-
-    if (!hasWon) {
-      break;
-    } else if (hasWon && i === (numberOfRounds - 1)) {
-      console.log(`Congratulations, ${name}!`);
+  } else if (b <= a) {
+    while (cd <= b) {
+      cd += 1;
+      if ((a % cd === 0) && (b % cd === 0)) {
+        gcd = cd;
+      }
     }
   }
+
+  const data = {
+    question: `${a} ${b}`,
+    answer: gcd,
+  };
+
+  return data;
 };
 
-export default () => engine(rules, gcd);
+export default () => engine(rules, prepareData);
