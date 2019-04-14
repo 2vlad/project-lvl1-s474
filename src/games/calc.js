@@ -7,36 +7,20 @@ const prepareData = () => {
   const a = random(0, 10);
   const b = random(0, 10);
 
-  const minMarkValue = 1;
-  const maxMarkValue = 3;
 
-  const markValue = Math.floor(Math.random() * (maxMarkValue - minMarkValue)) + minMarkValue;
-  let mark = '';
-  let correctAnswer = 0;
+  const valuesArray = [
+    (x, y) => ({ answer: String(x + y), question: `${x} + ${y}` }),
+    (x, y) => ({ answer: String(x - y), question: `${x} - ${y}` }),
+    (x, y) => ({ answer: String(x * y), question: `${x} * ${y}` }),
+  ];
 
-  switch (markValue) {
-    case 1:
-      mark = '+';
-      correctAnswer = a + b;
-      break;
-    case 2:
-      mark = '-';
-      correctAnswer = a - b;
-      break;
-    default:
-      mark = '*';
-      correctAnswer = a * b;
-      break;
-  }
-  correctAnswer = correctAnswer.toString();
-  const quest = `${a} ${mark} ${b}`;
+  const questionAndAnswer = valuesArray[random(0, valuesArray.length - 1)](a, b);
+  const { question, answer } = questionAndAnswer;
 
-  const data = {
-    question: quest,
-    answer: correctAnswer,
+  return {
+    question,
+    answer,
   };
-
-  return data;
 };
 
 export default () => engine(description, prepareData);
