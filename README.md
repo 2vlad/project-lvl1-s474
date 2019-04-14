@@ -17,3 +17,4 @@
 [![asciicast](https://asciinema.org/a/AUZLF5lG5MwORsKBAG1GJZ4i0.svg)](https://asciinema.org/a/AUZLF5lG5MwORsKBAG1GJZ4i0)
 
 ### brain-prime
+[![asciicast](https://asciinema.org/a/sjaRJx73AgUROHRfpiQk1ZBGx.svg)](https://asciinema.org/a/sjaRJx73AgUROHRfpiQk1ZBGx)
