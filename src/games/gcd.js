@@ -30,7 +30,7 @@ const prepareData = () => {
   const first = random(1, 10);
   const second = random(1, 10);
 
-  const gcd = getGCD(first, second);
+  const gcd = getGCD(first, second).toString();
   const quest = `${first} ${second}`;
 
   const data = {

@@ -22,12 +22,12 @@ const prepareData = () => {
     quest += ` ${sequence[i]}`;
   }
 
-  const data = {
+  missingElement = missingElement.toString();
+
+  return {
     question: quest,
     answer: missingElement,
   };
-
-  return data;
 };
 
 export default () => engine(description, prepareData);

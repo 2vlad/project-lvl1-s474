@@ -28,7 +28,7 @@ const prepareData = () => {
       correctAnswer = a * b;
       break;
   }
-
+  correctAnswer = correctAnswer.toString();
   const quest = `${a} ${mark} ${b}`;
 
   const data = {

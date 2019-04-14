@@ -14,7 +14,7 @@ export default (description, prepareData) => {
     console.log(`Question: ${data.question}!`);
     const usersAnswer = readlineSync.question('Your answer: ');
 
-    if (data.answer === parseInt(usersAnswer, 10)) {
+    if (data.answer === usersAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${data.answer}'`);
