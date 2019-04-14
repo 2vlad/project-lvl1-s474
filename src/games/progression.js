@@ -7,25 +7,25 @@ const progressionLength = 10;
 const prepareData = () => {
   const diff = random(0, 10);
   const begin = random(0, 20);
-  const sequence = [];
-  let quest = '';
+  const progression = [];
+  let questionToShow = '';
   const missingElementPos = random(0, progressionLength);
   let missingElement = 0;
 
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === missingElementPos) {
-      sequence[i] = '..';
+      progression[i] = '..';
       missingElement = begin + diff * i;
     } else {
-      sequence[i] = begin + diff * i;
+      progression[i] = begin + diff * i;
     }
-    quest += ` ${sequence[i]}`;
+    questionToShow += ` ${progression[i]}`;
   }
 
   missingElement = missingElement.toString();
 
   return {
-    question: quest,
+    question: questionToShow,
     answer: missingElement,
   };
 };
