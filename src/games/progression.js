@@ -5,24 +5,23 @@ const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const prepareData = () => {
-  const diff = random(0, 10);
-  const begin = random(0, 20);
-  const progression = [];
-  let questionToShow = '';
-  const missingElementPos = random(0, progressionLength);
-  let missingElement = 0;
+  const firstElement = random(0, 10);
+  const step = random(0, 10);
+  const positionOfMissingElement = random(0, progressionLength - 1);
 
-  for (let i = 0; i < progressionLength; i += 1) {
-    if (i === missingElementPos) {
-      progression[i] = '..';
-      missingElement = begin + diff * i;
-    } else {
-      progression[i] = begin + diff * i;
-    }
-    questionToShow += ` ${progression[i]}`;
-  }
+  const getQuestion = () => {
+    const iteration = (counter, progression) => {
+      if (counter === progressionLength) {
+        return progression;
+      }
+      const element = (counter === positionOfMissingElement) ? '..' : firstElement + counter * step;
+      return iteration(counter + 1, `${progression} ${element}`);
+    };
+    return iteration(0, '');
+  };
 
-  missingElement = missingElement.toString();
+  const questionToShow = getQuestion();
+  const missingElement = String(firstElement + positionOfMissingElement * step);
 
   return {
     question: questionToShow,
