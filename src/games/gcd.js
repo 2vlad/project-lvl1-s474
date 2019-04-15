@@ -30,15 +30,13 @@ const prepareData = () => {
   const first = random(1, 10);
   const second = random(1, 10);
 
-  const divisor = getGCD(first, second).toString();
-  const quest = `${first} ${second}`;
+  const answer = getGCD(first, second).toString();
+  const question = `${first} ${second}`;
 
-  const data = {
-    question: quest,
-    answer: divisor,
+  return {
+    question,
+    answer,
   };
-
-  return data;
 };
 
 export default () => engine(description, prepareData);

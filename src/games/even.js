@@ -6,15 +6,13 @@ const description = 'Answer "yes" if number even otherwise answer "no".';
 const isEven = number => number % 2 === 0;
 
 const prepareData = () => {
-  const quest = random(0, 10);
-  const correctAnswer = isEven(quest) ? 'yes' : 'no';
+  const question = random(0, 10);
+  const answer = isEven(question) ? 'yes' : 'no';
 
-  const data = {
-    question: quest,
-    answer: correctAnswer,
+  return {
+    question,
+    answer,
   };
-
-  return data;
 };
 
 export default () => engine(description, prepareData);

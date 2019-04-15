@@ -7,14 +7,13 @@ const prepareData = () => {
   const a = random(0, 10);
   const b = random(0, 10);
 
-
-  const valuesArray = [
+  const elements = [
     (x, y) => ({ answer: String(x + y), question: `${x} + ${y}` }),
     (x, y) => ({ answer: String(x - y), question: `${x} - ${y}` }),
     (x, y) => ({ answer: String(x * y), question: `${x} * ${y}` }),
   ];
 
-  const questionAndAnswer = valuesArray[random(0, valuesArray.length - 1)](a, b);
+  const questionAndAnswer = elements[random(0, elements.length - 1)](a, b);
   const { question, answer } = questionAndAnswer;
 
   return {
